@@ -1,0 +1,173 @@
+/* Animated Text Effects for Lyric Video Generator */
+/* Professional Cinematic Grade - Updated 2025 */
+
+/* ========== CORE ANIMATIONS (The Chosen 6) ========== */
+
+/* 1. Fade In / Out (Classic but Cinematic) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(1.05);
+    }
+}
+
+/* 2. Slide Up (Smooth Rise) */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* 3. Slide Down (Smooth Drop) */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* 4. Slide Left (Smooth Entry) */
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+/* 5. Typewriter (Crisp & Mechanical) */
+/* Note: This is usually handled by JS/Canvas, but CSS backup here */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* 6. Word Reveal (Handled by JS mostly, but here for reference) */
+@keyframes wordRevealAnim {
+    from {
+        opacity: 0;
+        transform: translateY(20px) rotateX(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+/* Class mappings with Professional Easings */
+.fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.slide-down {
+    animation: slideDown 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.slide-in-left { /* Mapping for dropdown value 'slideLeft' */
+    animation: slideLeft 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Utility Animations for UI Elements */
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255,215,0,0.5); }
+    50% { text-shadow: 0 0 25px rgba(255,215,0,0.9); }
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+header h1 {
+    animation: titleGlow 4s ease-in-out infinite, titleFloat 6s ease-in-out infinite;
+    background: linear-gradient(90deg, #FFD700, #FDB931, #FFD700);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation-fill-mode: both;
+}
+
+/* UI Card Entrance */
+@keyframes cardFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.glass-card {
+    animation: cardFadeIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Notification Slide */
+@keyframes slideInRight {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.notification {
+    animation: slideInRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* AI Badge */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 5px rgba(138, 43, 226, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(138, 43, 226, 0.9); }
+}
+
+.ai-badge {
+    animation: pulseGlow 2s infinite;
+}
